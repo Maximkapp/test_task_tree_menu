@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Виртуальное окружение
+venv/
+.venv/
+ENV/
+env/
+*.env
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3
+/staticfiles/
+media/
+*.sqlite3
+
+# IDE / редакторы
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Mac / Windows
+.DS_Store
+Thumbs.db
+
+# Pytest / coverage
+htmlcov/
+.coverage
+.pytest_cache/

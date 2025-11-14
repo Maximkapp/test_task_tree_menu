@@ -1,0 +1,51 @@
+{% load menu_tags %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Django Tree Menu Demo</title>
+    <style>
+        .tree-menu, .tree-menu ul {
+            list-style: none;
+            padding-left: 1rem;
+            margin: 0;
+        }
+        .tree-menu li {
+            margin: 3px 0;
+        }
+        .tree-menu li.active > a {
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .tree-menu li.expanded > ul {
+            display: block;
+        }
+        .tree-menu li ul {
+            display: none;
+        }
+        nav {
+            padding: 10px;
+            background: #f8f8f8;
+            margin-bottom: 20px;
+        }
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h3>Main menu:</h3>
+        {% draw_menu 'main_menu' %}
+    </nav>
+    <nav>
+        <h3>Second menu:</h3>
+        {% draw_menu 'main_menu_v2' %}
+    </nav>
+
+    <div style="padding:20px; border: 1px solid #ddd;">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{# tree_menu/templates/tree_menu/_menu_node.html #}
+<li class="{% if node.is_active %}active{% endif %} {% if node.expanded %}expanded{% endif %}">
+  {% if node.url_resolved %}
+    <a href="{{ node.url_resolved }}">{{ node.obj.title }}</a>
+  {% else %}
+    <span>{{ node.obj.title }}</span>
+  {% endif %}
+
+  {% if node.children %}
+    <ul {% if not node.expanded %}style="display:none"{% endif %}>
+      {% for child in node.children %}
+        {% include "tree_menu/_menu_node.html" with node=child %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>
